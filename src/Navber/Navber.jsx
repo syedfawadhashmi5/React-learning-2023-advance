@@ -51,6 +51,16 @@ function Navber() {
           ContextApiNumber
           </Link>
         </li>
+        <li className="nav-item">
+          <Link to="/Quiz_app" className="nav-link">
+          Quiz_app
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/Image_Crop" className="nav-link">
+          Image Crop
+          </Link>
+        </li>
       </ul>
     </div>
   </div>

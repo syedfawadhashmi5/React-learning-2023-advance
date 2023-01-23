@@ -19,7 +19,9 @@ function App() {
 
   const [num, setnum]=useState(1);
 
-  let students = [stname,claessNum,num];
+  const [st, setst]=useState("string is by pass contextapi");
+
+  let students = [stname,claessNum,num,st];
 
   return (
     <>      
