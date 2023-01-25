@@ -5,13 +5,12 @@ function Quiz_app() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
-  const [answerSelected, setAnswerSelected] = useState(false);
   const [timeLeft, setTimeLeft] = useState(600); // 10 minutes in seconds
   const [showTimeUp, setShowTimeUp] = useState(false);
-  const [correctAnswers, setCorrectAnswers] = useState(0);
-  const [incorrectAnswers, setIncorrectAnswers] = useState(0);
-  const [userAnswers, setUserAnswers] = useState([]);
-
+  const [selectedAnswer, setAnswerSelected]=useState(false);
+  const [correctAnswers, setCorrectAnswers]=useState(0);
+  const [incorrectAnswers, setIncorrectAnswers]=useState(0);
+  const [userAnswers, setUserAnswers]=useState([]);
 
   const [questions] = useState([
     {
@@ -77,30 +76,31 @@ function Quiz_app() {
     },
   ]);
 
+
+
   useEffect(() => {
-    if (timeLeft > 0 && !showScore) {
-      const timer = setTimeout(() => {
-        setTimeLeft((prevTime) => prevTime - 1);
+    if(timeLeft > 0 && !showScore){
+      const Timer = setTimeout(() => {
+        setTimeLeft((prevTime) => prevTime -1)
+        return clearTimeout(Timer);
       }, 1000);
-      return () => clearTimeout(timer);
-    } else if (timeLeft === 0) {
+    }else if (timeLeft === 0){
       setShowTimeUp(true);
       setShowScore(true);
     }
   }, [timeLeft, showScore]);
 
-  const handleAnswerOptionClick = (isCorrect, selectedAnswer,incorrect) => {
+  const handleAnswerOptionClick = (isCorrect, selectedAnswer, incorrect) => {
     setAnswerSelected(true);
-    if (isCorrect) {
+    if(isCorrect){
       setScore(score + 5);
       setCorrectAnswers(correctAnswers + 1);
-      setAnswerSelected(true)
-    } else {
-      setIncorrectAnswers(incorrectAnswers + 1);
+      setAnswerSelected(true);
+    }else {
+      setIncorrectAnswers(incorrectAnswers +1);
     }
     setUserAnswers([...userAnswers, selectedAnswer]);
-    
-  } 
+  }
 
   return (
     <div className="quiz_main">
@@ -125,32 +125,31 @@ function Quiz_app() {
           </div>
           <div className="col-md-6">
             <div className="answer-options">
-            {questions[currentQuestion].answerOptions.map(
-                (answerOption, index) => (
+              
+              {
+                questions[currentQuestion].answerOptions.map((answerOption, index) => (
                   <div key={index} className="ans_button_main">
-                    <button
-                      className={`answer-option ${
-                        userAnswers.includes(answerOption)
-                          ? questions[currentQuestion].answer === answerOption
-                            ? "correct"
-                            : "incorrect"
-                          : ""
-                      }`}
-                      
-                      disabled={answerSelected}
-                      onClick={() => {
-                        handleAnswerOptionClick(
-                          answerOption === questions[currentQuestion].answer,
-                          answerOption
-                        );
-                        setAnswerSelected(true);
-                      }}
+                    <button className={`answer-option ${
+                      userAnswers.includes(answerOption)
+                      ? questions[currentQuestion].answer === answerOption
+                      ? "correct"
+                      : "incorrect"
+                      : " "
+                    }`}
+                    disabled={selectedAnswer}
+                    onClick={() => {
+                      handleAnswerOptionClick(
+                        answerOption === questions[currentQuestion].answer,
+                        answerOption
+                      );
+                      setAnswerSelected(true);
+                    }}
                     >
-                      {answerOption}
+                    {answerOption}
                     </button>
                   </div>
-                )
-              )}
+                ))
+              }
             </div>
             <div className="buttons">
               {currentQuestion > 0 && (
@@ -163,7 +162,7 @@ function Quiz_app() {
                   Previous
                 </button>
               )}
-              {answerSelected && (
+              {selectedAnswer && (
                   <button
                     className={`next-button ${
                       currentQuestion === questions.length - 1

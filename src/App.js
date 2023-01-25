@@ -4,6 +4,8 @@ import Navber from './Navber/Navber';
 import Parent from './Component/Parent';
 import StudentContext from './Context/StudentContext';
 import './App.css'
+import { Provider } from 'react-redux';
+import { store } from './Component/React-redux/store';
 
 function App() {
 
@@ -24,12 +26,12 @@ function App() {
   let students = [stname,claessNum,num,st];
 
   return (
-    <>      
+    <Provider store={store}>      
     <Navber />
     <StudentContext.Provider value={{students}}>
     <Parent />
     </StudentContext.Provider>
-    </>
+    </Provider>
   )
 }
 

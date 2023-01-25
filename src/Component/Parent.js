@@ -6,7 +6,8 @@ import ApiIntegration from './FakeApiIntegration/ApiIntegration';
 import Apiwithfetch from './FakeApiIntegration/Apiwithfetch'
 import { Routes, Route } from "react-router-dom";
 import Quiz_app from './Quiz-App/Quiz_app';
-
+import Counter from './Counter';
+import CounterDisplay from './CounterDisplay';
 
 function parent() {
   return (
@@ -20,6 +21,8 @@ function parent() {
         <Route path='ContextApiNumber' element={<Child3 />} />
         <Route path='Quiz_app' element={<Quiz_app />} />
     </Routes>
+    <Counter/>
+      <CounterDisplay />
    </div>
   )
 }
