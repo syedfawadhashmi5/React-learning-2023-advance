@@ -61,6 +61,11 @@ function Navber() {
           Image Crop
           </Link>
         </li>
+        <li className="nav-item">
+          <Link to="/Todo_List" className="nav-link">
+          Todo List
+          </Link>
+        </li>
       </ul>
     </div>
   </div>

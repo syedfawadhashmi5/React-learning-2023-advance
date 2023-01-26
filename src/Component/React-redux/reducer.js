@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT, INCREMENT_BY_AMOUNT, Student_Array } from "./action";
+import { INCREMENT, DECREMENT, INCREMENT_BY_AMOUNT } from "./action";
 
 //var user = { name: "Zeeshan", email: "abc@gmail.com"}
 
@@ -8,7 +8,6 @@ import { INCREMENT, DECREMENT, INCREMENT_BY_AMOUNT, Student_Array } from "./acti
 
 const initialState = {
     counter: 0,
-    students: []
 }
 export const counterReducer = (state=initialState, action)=>{
     switch(action.type) {
@@ -25,11 +24,7 @@ export const counterReducer = (state=initialState, action)=>{
                 ...state, counter: state.counter+action.payload
             }
         }
-        case Student_Array: {
-            return {
-                ...state, array: state.students+action.payload
-            }
-        }
+        
         default: {
             return state
         }

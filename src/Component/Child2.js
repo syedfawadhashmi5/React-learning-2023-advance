@@ -4,7 +4,7 @@ import StudentContext from '../Context/StudentContext';
 
 function Child2() {
     const st = useContext(StudentContext);
-    console.log()
+    console.log(st.students[4])
 
     const [classNumber, setclaessNum]=useState(st.students[1])
 

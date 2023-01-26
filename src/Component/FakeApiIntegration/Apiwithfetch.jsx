@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 function FunictionApi() {
   const [data, setdata] = useState([]);
 
+  console.log(data)
+
   useEffect(() => {
     fetch("http://dummy.restapiexample.com/api/v1/employees").then((data) => {
       data

@@ -1,94 +1,33 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./Quiz_app.css";
+import StudentContext from "../../Context/StudentContext";
 
 function Quiz_app() {
+
+  const ques = useContext(StudentContext);
+  const [username,setUssername]=useState(ques.students[5])
+  const [questions]=useState(ques.students[4]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(600); // 10 minutes in seconds
-  const [showTimeUp, setShowTimeUp] = useState(false);
+  const [showTimeUp, setshowTimeUp]=useState(false);
+  const [timeLeft, settimeLeft]=useState(120)   // 2 minute 
   const [selectedAnswer, setAnswerSelected]=useState(false);
   const [correctAnswers, setCorrectAnswers]=useState(0);
   const [incorrectAnswers, setIncorrectAnswers]=useState(0);
   const [userAnswers, setUserAnswers]=useState([]);
 
-  const [questions] = useState([
-    {
-      questionText: "What was the old name of PIA?",
-      answerOptions: [
-        "Orient Airways",
-        "New Air Dublin",
-        "Madrid AirLine",
-        "Paris Line",
-      ],
-      answer: "Orient Airways",
-    },
-    {
-      questionText:
-        "What official name was given to Pakistan in 1956 constitution?",
-      answerOptions: [
-        "New Pakistan",
-        "Old Pakistan",
-        "Pakistan Moment",
-        "Islamic Republic",
-      ],
-      answer: "Islamic Republic",
-    },
-    {
-      questionText: "How many days are in September",
-      answerOptions: ["28", "29", "30", "31"],
-      answer: "28" 
-    },
-    {
-      questionText: "Which are the popular rivers of Baluchistan?",
-      answerOptions: ["1", "64", "742", "0"],
-      answer: "742",
-    },
-    {
-      questionText: "Which of these is not an planet?",
-      answerOptions: ["Earth", "Jupitor", "Mars", "Florida"],
-      answer: "Florida",
-    },
-    {
-      questionText: "Question 6?",
-      answerOptions: ["Answer 1", "Answer 2", "Answer 3", "Answer 4"],
-      answer: "Answer 2",
-    },
-    {
-      questionText: "Question 7?",
-      answerOptions: ["Answer 11", "Answer 12", "Answer 13", "Answer 14"],
-      answer: "Answer 13",
-    },
-    {
-      questionText: "Question 8?",
-      answerOptions: ["Answer 21", "Answer 22", "Answer 23", "Answer 24"],
-      answer: "Answer 24",
-    },
-    {
-      questionText: "Question 9?",
-      answerOptions: ["Answer 31", "Answer 32", "Answer 33", "Answer 34"],
-      answer: "Answer 31",
-    },
-    {
-      questionText: "Question 10?",
-      answerOptions: ["Answer 41", "Answer 42", "Answer 43", "Answer 44"],
-      answer: "Answer 43",
-    },
-  ]);
-
-
-
-  useEffect(() => {
-    if(timeLeft > 0 && !showScore){
-      const Timer = setTimeout(() => {
-        setTimeLeft((prevTime) => prevTime -1)
-        return clearTimeout(Timer);
-      }, 1000);
-    }else if (timeLeft === 0){
-      setShowTimeUp(true);
-      setShowScore(true);
-    }
-  }, [timeLeft, showScore]);
+useEffect(() => {
+  if(timeLeft > 0 && !showScore){
+    const Timer = setTimeout(() => {
+      settimeLeft((prevTime) => prevTime - 1)
+      return clearTimeout(Timer)
+    }, 1000);
+  }else if(timeLeft === 0){
+    setshowTimeUp(true);
+    setShowScore(true);
+  }
+}, [timeLeft, showScore]);
 
   const handleAnswerOptionClick = (isCorrect, selectedAnswer, incorrect) => {
     setAnswerSelected(true);
@@ -112,6 +51,7 @@ function Quiz_app() {
               <div className="score">
                 <h2>Score: {score}</h2>
                 <h3>Time Left : {timeLeft}</h3>
+                <p><span>user Name:</span> {username}</p>
               </div>
               <div className="question-count mt-4">
                 <h3>
@@ -190,11 +130,6 @@ function Quiz_app() {
                 Quit
               </button>
             </div>
-            {showTimeUp && (
-              <div className="time-up">
-                <p>Time's up!</p>
-              </div>
-            )}
           </div>
         </div>
       </div>

@@ -6,8 +6,9 @@ import ApiIntegration from './FakeApiIntegration/ApiIntegration';
 import Apiwithfetch from './FakeApiIntegration/Apiwithfetch'
 import { Routes, Route } from "react-router-dom";
 import Quiz_app from './Quiz-App/Quiz_app';
-import Counter from './Counter';
-import CounterDisplay from './CounterDisplay';
+import ImageCropper from './Image-crop/ImageCropper';
+import TodoList from './contextApi_todo_list/TodoList';
+
 
 function parent() {
   return (
@@ -20,9 +21,10 @@ function parent() {
         <Route path='ContextApiarray' element={<Child2 />} />
         <Route path='ContextApiNumber' element={<Child3 />} />
         <Route path='Quiz_app' element={<Quiz_app />} />
+        <Route path='Image_Crop' element={<ImageCropper />} />
+        <Route path='Todo_List' element={<TodoList />} />
     </Routes>
-    <Counter/>
-      <CounterDisplay />
+
    </div>
   )
 }
