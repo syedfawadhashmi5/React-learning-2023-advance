@@ -199,14 +199,23 @@ h1.heading {
 
 .delete-btn {
   border: none;
-  width: 74%;
+  width: 60%;
   border-radius: 17px;
   text-align: center;
   background-color: blue;
   color: white;
-  margin-left: 10px;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
   padding: 4px 0px;
+}
+
+.edit-btn {
+  border: none;
+  background: none;
+  margin-bottom: 3px;
+}
+
+.check {
+  visibility: none !important;
 }

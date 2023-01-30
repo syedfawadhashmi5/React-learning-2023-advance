@@ -6,7 +6,7 @@ function FunictionApi() {
   console.log(data)
 
   useEffect(() => {
-    fetch("http://dummy.restapiexample.com/api/v1/employees").then((data) => {
+    fetch("http://www.omdbapi.com/?i=tt38961945S&apikey=ae3c7d04").then((data) => {
       data
         .json()
         .then((res) => {

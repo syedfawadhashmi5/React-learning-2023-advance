@@ -199,3 +199,155 @@
   text-transform: uppercase;
   text-align: left;
 }
+
+.product {
+  display: flex;
+  flex-direction: column;
+  width: 94%;
+  padding: 0px 15px;
+  box-shadow: 1px 1px 13px black;
+  border-radius: 7px;
+}
+
+.product img {
+  border-radius: 7px;
+  height: 225px;
+  object-fit: contain;
+}
+
+.product h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  margin: 5px;
+  color: #001e2c;
+}
+
+.product p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 5px;
+  color: #7e0000;
+}
+
+.product button {
+  width: 40%;
+  margin: 15px auto;
+  padding: 9px 0px;
+  border: none;
+  color: black;
+  background-color: yellow;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.div_count a{
+  text-decoration: none;
+}
+
+.cartcad {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 0 auto;
+  padding: 20px 15px;
+  box-shadow: 1px 1px 13px black;
+  border-radius: 7px;
+}
+
+.cartcad img {
+  width: 65%;
+  height: 180px;
+  margin: 0 auto;
+}
+
+.cartcad h4 {
+  font-size: 17px;
+  text-transform: uppercase;
+  color: #001740;
+  font-weight: 700;
+  line-height: 21px;
+}
+
+.text_dece {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #012e72;
+  font-weight: 700;
+}
+
+.cart-btn {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.cart-btn button {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+  background-color: #1000ff;
+  padding: 5px 11px;
+  color: white;
+  border-radius: 46%;
+}
+
+.cart-btn .p_count {
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+  border: none;
+  padding: 5px 11px;
+  color: black;
+  border-radius: 46%;
+  margin-bottom: 0;
+}
+
+.Dash_bord {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: start;
+  bottom: 0;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 16%;
+}
+
+.Dash_bord .navbar-nav {
+  width: 100%;
+}
+
+.Dash_bord .navbar-nav a {
+  color: #ffffff;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.Dash_bord .navbar-nav a:hover {
+  color: #ecc800;
+  background-color: rgba(255, 255, 255, 0.103);
+}
+
+.main_nav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 216px;
+  width: 84%;
+  height: 66px;
+}
