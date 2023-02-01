@@ -1,10 +1,8 @@
 import React from "react";
 import { Data } from "./Data";
-import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 
 const Products = () => {
-  const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   return (
     <div className="productConatiner">

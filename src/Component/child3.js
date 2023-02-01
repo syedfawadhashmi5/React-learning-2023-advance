@@ -9,11 +9,9 @@ function Child3() {
     const string = useContext(StudentContext);
 
 
-    const [number, setNumber]=useState(num.students[2])
+    const [number]=useState(num.students[2])
 
-    const [st, stst]=useState(string.students[3])
-
-    console.log(st)
+    const [st]=useState(string.students[3])
 
   return (
     <div>

@@ -5,7 +5,7 @@ import StudentContext from "../../Context/StudentContext";
 function Quiz_app() {
 
   const ques = useContext(StudentContext);
-  const [username,setUssername]=useState(ques.students[5])
+  const [username]=useState(ques.students[5])
   const [questions]=useState(ques.students[4]);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [showScore, setShowScore] = useState(false);

@@ -1,15 +1,13 @@
 import React, { useState } from 'react';
-import ApiIntegration from '../Component/FakeApiIntegration/ApiIntegration';
 import Parent from '../Component/Parent';
 import StudentContext from '../Context/StudentContext';
-import { Provider } from 'react-redux';
 import { Link } from "react-router-dom";
 
 function Dashboard() {
 
     const [UserName]=useState("imran");
 
-    const [stname, setstaname]= useState([
+    const [stname]= useState([
        {name: 'tomboy',age: 17},
        {name: 'Ash',age: 20},
        {name: 'shari',age: 25},
@@ -83,9 +81,9 @@ function Dashboard() {
    
      const [claessNum, setclaessNum]=useState([6,7,8,9,10]);
    
-     const [num, setnum]=useState(1);
+     const [num]=useState(1);
    
-     const [st, setst]=useState("string is by pass contextapi");
+     const [st]=useState("string is by pass contextapi");
    
      let students = [stname,claessNum,num,st,questions,UserName];
    

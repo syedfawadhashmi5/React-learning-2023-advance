@@ -5,7 +5,7 @@ import { useContext } from "react";
 function Child() {
 
   let namme = useContext(StudentContext);
-  const [students, setstudents]=useState(namme.students[0]);
+  const [students]=useState(namme.students[0]);
 
 
 

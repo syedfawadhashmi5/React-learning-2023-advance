@@ -6,7 +6,7 @@ function Child2() {
     const st = useContext(StudentContext);
     console.log(st.students[4])
 
-    const [classNumber, setclaessNum]=useState(st.students[1])
+    const [classNumber]=useState(st.students[1])
 
   return (
     <div>

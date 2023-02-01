@@ -6,8 +6,6 @@ function TodoList() {
   const [tasks, setTasks] = useState([]);
   const [Addtask, setAddtask]=useState('');
 
-
-
 const AddnewTask = (e) => {
   e.preventDefault();
   if(Addtask === " ")return;
@@ -20,17 +18,10 @@ const AddnewTask = (e) => {
   setAddtask(" ");
 }
 
-
-  const remove = (index) => {
-    setTasks(tasks.filter((task, i) => i !== index));
-  };
-
   const RemoveTask = (index) => {
     setTasks(tasks.filter((task, i) => i !== index))
   }
 
-
-  
   const tasktoggle = (index) => {
    const taskList = [...tasks];
     const obj = { ...taskList[index]}
