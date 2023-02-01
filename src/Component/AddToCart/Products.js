@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 const Products = () => {
-  const cart = useSelector((state) => state);
-  console.log(cart);
+  const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   return (
     <div className="productConatiner">
@@ -20,7 +19,7 @@ const Products = () => {
               <img src={item.image} alt="cart" />
               <h4>{item.name}</h4>
               <p>Pkr. {item.price}</p>
-              <button onClick={() => dispatch({ type: "ADD", payload: item })}>
+              <button onClick={() => dispatch({type: 'ADD', payload: item})}>
                 add to cart
               </button>
             </div>

@@ -10,6 +10,8 @@ import TodoList from './contextApi_todo_list/TodoList';
 import Products from "./AddToCart/Products";
 import Cart from "./AddToCart/Cart";
 import Home from './Home/Home';
+import StudentData from './AddStudentData/StudentData';
+
 
 function parent() {
   return (
@@ -25,6 +27,7 @@ function parent() {
         <Route path='Todo_List' element={<TodoList />} />
         <Route path='Products' element={<Products />} />
         <Route path='Cart' element={<Cart />} />
+        <Route path='StudentData' element={<StudentData />} />
     </Routes>
     
    </div>

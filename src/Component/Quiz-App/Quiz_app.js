@@ -11,13 +11,14 @@ function Quiz_app() {
   const [showScore, setShowScore] = useState(false);
   const [score, setScore] = useState(0);
   const [showTimeUp, setshowTimeUp]=useState(false);
-  const [timeLeft, settimeLeft]=useState(120)   // 2 minute 
+  const [timeLeft, settimeLeft]=useState(120); // 2 mins Timer
   const [selectedAnswer, setAnswerSelected]=useState(false);
   const [correctAnswers, setCorrectAnswers]=useState(0);
   const [incorrectAnswers, setIncorrectAnswers]=useState(0);
   const [userAnswers, setUserAnswers]=useState([]);
 
 useEffect(() => {
+
   if(timeLeft > 0 && !showScore){
     const Timer = setTimeout(() => {
       settimeLeft((prevTime) => prevTime - 1)

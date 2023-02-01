@@ -351,3 +351,42 @@
   width: 84%;
   height: 66px;
 }
+
+.student_form {
+  padding: 58px 7px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  box-shadow: 0px 0px 1px #0e0aff;
+  width: 90%;
+  margin: 40px auto;
+}
+
+.student_form input {
+  padding: 4px 13px;
+}
+
+.student_form button {
+  padding: 4px 35px;
+    border: none;
+    background-color: yellow;
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 600;
+    border-radius: 6px;
+}
+
+.student_form button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.table tbody button {
+  padding: 4px 12px;
+  border: none;
+  background-color: yellow;
+  font-size: 16px;
+  text-transform: capitalize;
+  font-weight: 600;
+  border-radius: 6px;
+}

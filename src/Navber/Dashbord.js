@@ -3,7 +3,6 @@ import ApiIntegration from '../Component/FakeApiIntegration/ApiIntegration';
 import Parent from '../Component/Parent';
 import StudentContext from '../Context/StudentContext';
 import { Provider } from 'react-redux';
-import { store } from '../Component/React-redux/store';
 import { Link } from "react-router-dom";
 
 function Dashboard() {
@@ -145,6 +144,11 @@ function Dashboard() {
             <li className="nav-item">
               <Link to="/Products" className="nav-link">
                 Add to cart
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/StudentData" className="nav-link">
+                Student Data
               </Link>
             </li>
           </ul>

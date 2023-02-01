@@ -6,8 +6,7 @@ import { FaMinus } from "react-icons/fa";
 import { FaTrash } from "react-icons/fa";
 
 const Cart = () => {
-  const cart = useSelector((state) => state);
-  console.log(cart);
+  const cart = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const addition = (acc, currentvalue) => {
     return acc + currentvalue.price * currentvalue.quantity;

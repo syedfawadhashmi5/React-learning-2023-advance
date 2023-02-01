@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { GiShoppingBag } from "react-icons/gi";
 import { useSelector } from "react-redux";
 function Navber() {
-  const CountCart = useSelector((state) => state);
+  const CountCart = useSelector((state) => state.cart);
   return (
     <nav className="navbar navbar-expand-lg  bg-dark text-white main_nav">
       <div className="container-fluid">

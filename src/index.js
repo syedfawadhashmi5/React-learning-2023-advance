@@ -6,9 +6,17 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import Reducer from "./Component/AddToCart/Reducer";
-const store = createStore(Reducer);
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import my_reducer from './Component/my_reducer';
+import { combineReducers } from "redux";
+import StudentRedux from './Component/React-redux/StudentRedux';
+
+const rootReducer = combineReducers({
+  cart: my_reducer,
+  user: StudentRedux
+});
+const store = createStore(rootReducer);
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
   <Router>
