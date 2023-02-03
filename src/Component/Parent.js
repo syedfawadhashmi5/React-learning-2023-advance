@@ -15,7 +15,7 @@ import StudentData from './AddStudentData/StudentData';
 
 function parent() {
   return (
-   <div className='mt-5  text-center'>
+   <div className='my-5  text-center'>
          <Routes path="/parent">
          <Route path="/" element={<Home />} />
         <Route path="fetchApi" element={<Apiwithfetch />} />

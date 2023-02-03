@@ -8,11 +8,9 @@ function StudentData() {
   const [className, setclassName] = useState("");
   const [classTime, setclassTime] = useState("");
 
-
   const userId = nextId();
 
   const Data = useSelector((state) => state.user);
-  console.log(Data);
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
@@ -30,25 +28,6 @@ function StudentData() {
     setclassName(" ");
     setclassTime(" ");
   };
-
-  const handleEditClick = (item) => {
-    console.log(item.id);
-    if(item.id === Data.id){
-      setstudentName("");
-      setstudentAge("");
-      setclassName(" ");
-      setclassTime(" ");
-    }
-    const newStudent = {
-      id: item.id,
-      Name: studentName,
-      Age: studentAge,
-      ClassName: className,
-      classTime: classTime,
-    };
-    dispatch({ type: "UPDATE_USER", payload: newStudent });
-  };
-  
 
   return (
     <>
@@ -109,11 +88,6 @@ function StudentData() {
                     >
                       Delete Your Class
                     </button>
-                    <button
-          onClick={() => handleEditClick(item)}
-        >
-          handleEditClick
-        </button>
                   </td>
                 </tr>
             ))}

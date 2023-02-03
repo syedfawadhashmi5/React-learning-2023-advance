@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Parent from '../Component/Parent';
 import StudentContext from '../Context/StudentContext';
 import { Link } from "react-router-dom";
+import reactlog from "../Image/Reactlogo.png";
 
 function Dashboard() {
 
@@ -79,7 +80,7 @@ function Dashboard() {
        },
      ]);
    
-     const [claessNum, setclaessNum]=useState([6,7,8,9,10]);
+     const [claessNum]=useState([6,7,8,9,10]);
    
      const [num]=useState(1);
    
@@ -90,11 +91,15 @@ function Dashboard() {
   return (
     <div className="container-fluid p-0">
         <div className="row me-0">
-            <div className="col-md-2 p-0">
+            <div className="col-md-2 col-12 p-0 navbar-collapse text-white"
+    id="navbarNav">
             <nav className="navbar Dash_bord">
       <div className="container-fluid">
-      <ul className="navbar-nav m-auto mb-2 mb-lg-0 text-white text-center pt-3">
-            <li className="nav-item">
+      <ul className="navbar-nav m-auto mb-2 mb-lg-0 text-white text-center pt-4">
+      <Link to="/" className="navbar-brand text-white reactlog" href="#">
+          <img src={reactlog} alt='react-log' />
+        </Link>
+            <li className="nav-item active">
               <Link to="/" className="nav-link">
                 Home
               </Link>
@@ -153,7 +158,7 @@ function Dashboard() {
       </div>
     </nav>
             </div>
-            <div className="col-md-10 p-0 mt-5">
+            <div className="col-md-10 col-12 p-0 mt-5">
                     <StudentContext.Provider value={{students}}>
     <Parent />
     </StudentContext.Provider>

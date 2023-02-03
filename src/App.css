@@ -319,7 +319,7 @@
   text-align: center;
   height: 100vh;
   display: flex;
-  align-items: start;
+  align-items: center;
   bottom: 0;
     left: 0;
     position: fixed;
@@ -389,4 +389,41 @@
   text-transform: capitalize;
   font-weight: 600;
   border-radius: 6px;
+}
+
+.navbar-collapse {
+  flex-basis: 0%;
+}
+
+.reactlog img {
+  width: 100%;
+  margin: 18px 0px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  .main_nav {
+    position: fixed;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 66px;
+}
+
+.collapse:not(.show) {
+  display: none !important;
+}
+
+.Dash_bord {
+  top: 66px;
+  width: 100%;
+}
+
+.navbar-collapse .div_count {
+  position: absolute;
+  top: 13px;
+  right: 164px;
+}
+  
 }
