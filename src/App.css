@@ -418,12 +418,26 @@
 .Dash_bord {
   top: 66px;
   width: 100%;
+  display: none;
 }
 
 .navbar-collapse .div_count {
   position: absolute;
   top: 13px;
   right: 164px;
+} 
+
+.desktop {
+  visibility: hidden;
 }
-  
+
+.reactlog img {
+  width: 35%;
+  margin: 20px 0px;
+}
+
+.bk-colour {
+  background-color: #000000;
+}
+
 }
